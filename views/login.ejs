@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <style>
+    .login{
+      width: 800px;
+      height: 300px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    span{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h3>用户登录</h3>
+    <form action="http://localhost:5000/login" method="POST">
+      邮箱：<input type="text" name="email" value="<%=Errmsg.email%>"><span><%=Errmsg.emailErrmsg%></span>
+      密码：<input type="password" name="password"><span><%=Errmsg.passwordErrmsg%></span>
+      <input type="submit">
+    </form>
+    <h4 style="color: red;"><%=Errmsg.loginErr%></h4>
+    <span><%=Errmsg.netErr%></span>
+  </div>
+</body>
+</html>
